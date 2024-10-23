@@ -1,7 +1,11 @@
+//Ethan Thomas Davies Greene
+//251348539
+//egreene4
+
 import java.util.ArrayList;
 
 public class HashDictionary implements DictionaryADT {
-    private ArrayList<Data>[] table;  // Hash table storing chains (ArrayLists of Data)
+    private final ArrayList[] table;  // Hash table storing chains (ArrayLists of Data)
     private int numRecords;           // Total number of records in the dictionary
 
     // Constructor: Initializes the hash table of the specified size

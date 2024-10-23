@@ -1,4 +1,11 @@
+//Ethan Thomas Davies Greene
+//251348539
+//egreene4
+
+//Defining the public class Configurations
 public class Configurations {
+
+    //Initializing all positions on the board to be empty
     private final char[][] board;
     private final int boardSize;
     private final int lengthToWin;
@@ -13,6 +20,8 @@ public class Configurations {
         this.boardSize = boardSize;
         this.lengthToWin = lengthToWin;
         this.board = new char[boardSize][boardSize];
+
+        //setting all positions on the game board to empty
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
                 this.board[i][j] = ' ';
@@ -25,7 +34,9 @@ public class Configurations {
      * @return An empty HashDictionary.
      */
     public HashDictionary createDictionary() {
-        return new HashDictionary(6007); // Chosen prime number between 6000 and 10000
+
+        // Chosen prime number between 6000 and 10000
+        return new HashDictionary(6007);
     }
 
     /**
@@ -78,23 +89,25 @@ public class Configurations {
      * @return True if the symbol has a winning sequence, otherwise false.
      */
     public boolean wins(char symbol) {
-        // Check rows, columns, and diagonals for a winning sequence
+        // Check rows and columns for a winning sequence
         for (int i = 0; i < boardSize; i++) {
             if (checkLine(symbol, i, 0, 0, 1) || checkLine(symbol, 0, i, 1, 0)) {
                 return true;
             }
         }
-        if (checkLine(symbol, 0, 0, 1, 1) || checkLine(symbol, 0, boardSize - 1, 1, -1)) {
-            return true;
-        }
-        return false;
+
+        // Check diagonal lines for a winning sequence
+        return checkLine(symbol, 0, 0, 1, 1) || checkLine(symbol, 0, boardSize - 1, 1, -1);
     }
+
 
     /**
      * Checks if the game is a draw.
      * @return True if the game is a draw, otherwise false.
      */
     public boolean isDraw() {
+
+        //Checks if there are any empty positions left on the board
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
                 if (board[i][j] == ' ') {
@@ -102,6 +115,7 @@ public class Configurations {
                 }
             }
         }
+        //If no empty positions and no winner, its a draw
         return !wins('X') && !wins('O');
     }
 
@@ -111,12 +125,16 @@ public class Configurations {
      */
     public int evalBoard() {
         if (wins('O')) {
+            //Computer wins
             return 3;
         } else if (wins('X')) {
+            //Human wins
             return 0;
         } else if (isDraw()) {
+            //Draw
             return 2;
         } else {
+            //Undecided
             return 1;
         }
     }
