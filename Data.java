@@ -1,16 +1,20 @@
 public class Data {
+    private String config;
+    private int score;
 
-    public Data(String config, int score){
-
+    // Constructor: Initializes the configuration and score
+    public Data(String config, int score) {
+        this.config = config;
+        this.score = score;
     }
 
-    public String getConfiguration(){
-        return null;
-
+    // Returns the configuration string
+    public String getConfiguration() {
+        return config;
     }
 
-    public int getScore(){
-        return 0;
+    // Returns the score associated with the configuration
+    public int getScore() {
+        return score;
     }
-
 }
