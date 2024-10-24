@@ -20,9 +20,9 @@ public class HashDictionary implements DictionaryADT {
     // Hash function using a polynomial hash technique
     private int hashFunction(String config, int tableSize) {
         int hashValue = 0;
-        int a = 55;  // Prime number to reduce collisions
+        int a = 39;  // Prime number to reduce collisions
         for (int i = 0; i < config.length(); i++) {
-            hashValue = (a * hashValue + config.charAt(i)) % tableSize;
+            hashValue = (a * hashValue + (int) config.charAt(i)) % tableSize;
         }
         return hashValue;
     }
