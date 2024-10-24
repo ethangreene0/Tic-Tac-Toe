@@ -172,5 +172,6 @@ public class TestDict {
 				System.out.println("Too many collisions: "+collisions);
 			}
 			else  System.out.println("   Test 10 succeeded");
+			System.out.println("Number of collisions: "+collisions);
 	  }
 	}

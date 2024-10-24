@@ -3,6 +3,8 @@
 //egreene4
 
 public class Data {
+
+    //Initializing final private variables of type string and int for config and score respectively
     private final String config;
     private final int score;
 

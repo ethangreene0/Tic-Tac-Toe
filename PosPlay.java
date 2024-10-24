@@ -1,9 +1,9 @@
 
 /* This class represents a possible play and its associated score */
 public class PosPlay {
-    private final int row;
-    private final int col; /* Row and column of the play */
-    private final int score;    /* play's score               */
+    private  int row;
+    private  int col; /* Row and column of the play */
+    private  int score;    /* play's score               */
 
     public PosPlay(int v, int r, int c) {
 	row = r;

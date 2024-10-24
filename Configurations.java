@@ -97,7 +97,7 @@ public class Configurations {
         }
 
         // Check diagonal lines for a winning sequence
-        return checkLine(symbol, 0, 0, 1, 1) || checkLine(symbol, 0, boardSize - 1, 1, -1);
+        return checkLine(symbol, 0, 0, 1,1 ) || checkLine(symbol, 0, boardSize - 1, 1, -1);
     }
 
 
@@ -164,7 +164,7 @@ public class Configurations {
      */
     private boolean checkLine(char symbol, int startRow, int startCol, int deltaRow, int deltaCol) {
         int count = 0;
-        for (int i = 0; i < boardSize; i++) {
+        for (int i = 0; i < boardSize; ++i) {
             int row = startRow + i * deltaRow;
             int col = startCol + i * deltaCol;
             if (row >= 0 && row < boardSize && col >= 0 && col < boardSize && board[row][col] == symbol) {
